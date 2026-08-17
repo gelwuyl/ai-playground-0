@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVICE AI PLAYGROUND</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Landing Screen -->
+    <section id="screen-landing" class="screen active">
+      <div class="container">
+        <h1 class="display-xl">NOVICE AI PLAYGROUND</h1>
+        <p class="caption-uppercase">A LEARNING PROJECT — GENERATIVE AI AT YOUR FINGERTIPS</p>
+        <form id="name-form">
+          <div class="input-group">
+            <input type="text" id="name-input" name="name" placeholder=" " required>
+            <label for="name-input">YOUR NAME</label>
+          </div>
+          <button type="submit" class="button-primary">ENTER</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Main Menu Screen -->
+    <section id="screen-main" class="screen">
+      <div class="container">
+        <h2 class="display-sm">WELCOME, <span id="user-name"></span></h2>
+        <p class="caption-uppercase">HOW CAN I HELP YOU TODAY?</p>
+        <div class="menu-grid">
+          <button class="menu-card" data-target="text">
+            <h3 class="title-md">TEXT GENERATOR</h3>
+            <p class="body-md">Chat with Gemini 2.0 Flash</p>
+          </button>
+          <button class="menu-card" data-target="image">
+            <h3 class="title-md">IMAGE GENERATOR</h3>
+            <p class="body-md">Create images from prompts</p>
+          </button>
+          <button class="menu-card" data-target="history">
+            <h3 class="title-md">HISTORY</h3>
+            <p class="body-md">View past queries</p>
+          </button>
+          <button class="menu-card" data-target="clear">
+            <h3 class="title-md">CLEAR HISTORY</h3>
+            <p class="body-md">Delete all saved queries</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Text Generator Screen -->
+    <section id="screen-text" class="screen">
+      <div class="container narrow">
+        <h2 class="display-sm">TEXT GENERATOR</h2>
+        <p class="caption-uppercase">POWERED BY GEMINI 2.0 FLASH</p>
+        <form id="text-form" class="query-form">
+          <div class="input-group">
+            <textarea id="text-input" name="prompt" placeholder=" " rows="3" required></textarea>
+            <label for="text-input">YOUR QUESTION</label>
+          </div>
+          <button type="submit" class="button-primary">GENERATE</button>
+        </form>
+        <div id="text-result" class="result-box hidden">
+          <p class="caption-uppercase">REPLY</p>
+          <div id="text-output" class="body-md"></div>
+        </div>
+        <button class="text-link back-btn" data-back="main">← BACK TO MAIN</button>
+      </div>
+    </section>
+
+    <!-- Image Generator Screen -->
+    <section id="screen-image" class="screen">
+      <div class="container narrow">
+        <h2 class="display-sm">IMAGE GENERATOR</h2>
+        <p class="caption-uppercase">POWERED BY GEMINI 2.0 FLASH IMAGE</p>
+        <form id="image-form" class="query-form">
+          <div class="input-group">
+            <textarea id="image-input" name="prompt" placeholder=" " rows="3" required></textarea>
+            <label for="image-input">DESCRIBE THE IMAGE</label>
+          </div>
+          <button type="submit" class="button-primary">GENERATE IMAGE</button>
+        </form>
+        <div id="image-result" class="result-box hidden">
+          <img id="image-output" alt="Generated image">
+        </div>
+        <button class="text-link back-btn" data-back="main">← BACK TO MAIN</button>
+      </div>
+    </section>
+
+    <!-- History Screen -->
+    <section id="screen-history" class="screen">
+      <div class="container narrow">
+        <h2 class="display-sm">HISTORY</h2>
+        <p class="caption-uppercase">YOUR PAST QUERIES</p>
+        <div id="history-list" class="history-list"></div>
+        <button class="text-link back-btn" data-back="main">← BACK TO MAIN</button>
+      </div>
+    </section>
+
+    <!-- End Screen -->
+    <section id="screen-end" class="screen">
+      <div class="container">
+        <h2 class="display-md">THANK YOU, <span id="end-name"></span></h2>
+        <p class="body-md">HOPE TO SEE YOU AGAIN!</p>
+        <button class="button-primary" id="restart-btn">START OVER</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="loading" class="loading-overlay hidden">
+    <div class="loader"></div>
+    <p class="caption-uppercase">GENERATING...</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
