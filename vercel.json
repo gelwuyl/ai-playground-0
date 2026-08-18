@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "routes": [
+    { "src": "/api", "dest": "api/index.py" },
+    { "src": "/(.*)", "dest": "dist/$1" }
+  ]
+}
