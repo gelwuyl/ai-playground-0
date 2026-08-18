@@ -1,4 +1,4 @@
-# Novice AI Playground
+# AI Playground 0
 
 A single-page web application that demonstrates generative AI capabilities — text chat and image generation — powered by Google Gemini 2.0 Flash. Built as a learning project during NTU's "Developing Intelligent Applications with GPT API" course (March 2024).
 
@@ -11,7 +11,7 @@ A single-page web application that demonstrates generative AI capabilities — t
 ## Architecture
 
 ```
-novice-ai-playground/
+ai-playground-0/
 ├── api/
 │   └── index.py          # Vercel serverless function (Python backend)
 ├── public/
@@ -45,7 +45,7 @@ If your AI assistant has Composio MCP with the Vercel toolkit:
 
 1. Ensure your Vercel connection is active
 2. Have the assistant run the provisioning flow:
-   - Create project `novice-ai-playground`
+   - Create project `ai-playground-0`
    - Set framework to `none` (static + serverless)
    - Add env var `GEMINI_API_KEY` with your real key
    - Deploy
