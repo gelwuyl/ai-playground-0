@@ -40,11 +40,11 @@ def api_handler():
 def _generate_text(prompt, api_key):
     client = genai.Client(api_key=api_key)
     result = client.models.generate_content(
-        model='gemini-2.0-flash',
+        model='gemini-3.6-flash',
         contents=prompt,
         config=types.GenerateContentConfig(temperature=0.7, max_output_tokens=1024),
     )
-    return _json_response({'text': result.text or '', 'model': 'gemini-2.0-flash'}, 200)
+    return _json_response({'text': result.text or '', 'model': 'gemini-3.6-flash'}, 200)
 
 def _generate_image(prompt, api_key):
     client = genai.Client(api_key=api_key)
