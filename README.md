@@ -1,4 +1,4 @@
-# AI Playground 0
+# AI Playground (2024)(refreshed-2026)
 
 A single-page web application that demonstrates generative AI capabilities — text chat and image generation — powered by Google Gemini 2.0 Flash. Built as a learning project during NTU's "Developing Intelligent Applications with GPT API" course (March 2024).
 
